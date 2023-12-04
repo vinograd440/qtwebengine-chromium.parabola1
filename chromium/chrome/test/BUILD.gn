@@ -251,7 +251,6 @@ static_library("test_support") {
     "//content/public/utility",
     "//content/test:test_support",
     "//extensions/buildflags",
-    "//google_apis:test_support",
     "//gpu/ipc/service",
     "//ipc:test_support",
     "//media:media_buildflags",
