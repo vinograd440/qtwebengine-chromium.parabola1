@@ -800,7 +800,6 @@ if (!is_android) {
       "//device/bluetooth:mocks",
       "//device/fido:test_support",
       "//extensions/buildflags",
-      "//google_apis:test_support",
       "//media:media_buildflags",
       "//media:test_support",
       "//media/cast:test_support",
