@@ -444,7 +444,6 @@ static_library("test_support") {
       "//chrome/common/extensions/api",
       "//components/guest_view/browser:test_support",
       "//extensions:test_support",
-      "//google_apis/drive:test_support",
     ]
 
     deps += [
@@ -882,7 +881,6 @@ if (!is_android) {
       "//components/test/data/payments/",
       "//components/test/data/update_client/",
       "//content/test/data/",
-      "//google_apis/test/",
       "//media/test/data/",
       "//net/tools/testserver/",
       "//ppapi/tests/test_case.html",
@@ -2080,8 +2078,7 @@ if (!is_android) {
         "//components/keep_alive_registry",
         "//components/media_router/browser:test_support",
         "//components/web_package:test_support",
-        "//google_apis/drive:test_support",
-
+        
         # TODO(rockot) bug 505926: The chrome_extensions_browsertests target
         # should be deleted and this line removed. See the
         # chrome_extensions_browsertests target for more.
@@ -3973,7 +3970,6 @@ test("unit_tests") {
     "//base/test/data/",
     "//components/test/data/",
     "//extensions/test/data/",
-    "//google_apis/test/data/",
     "//net/tools/testserver/",
     "//third_party/pywebsocket3/src/mod_pywebsocket/",
     "//third_party/tlslite/",
@@ -4095,7 +4091,6 @@ test("unit_tests") {
     "//device/fido",
     "//device/fido:test_support",
     "//extensions/buildflags",
-    "//google_apis",
     "//gpu:test_support",
     "//media:test_support",
     "//mojo/public/cpp/bindings",
@@ -5309,8 +5304,6 @@ test("unit_tests") {
       "//extensions/common",
       "//extensions/renderer:unit_test_support",
       "//extensions/strings",
-      "//google_apis",
-      "//google_apis/drive",
       "//media/cast:test_support",
       "//services/device/public/cpp/hid:test_support",
       "//services/network/public/mojom",
@@ -6141,7 +6134,6 @@ if (!is_android) {
         "//crypto:platform",
         "//crypto:test_support",
         "//extensions/buildflags",
-        "//google_apis:test_support",
         "//net",
         "//net:net_resources",
         "//net:test_support",
@@ -6155,11 +6147,7 @@ if (!is_android) {
         "//ui/base:test_support",
         "//ui/resources:ui_test_pak",
         "//ui/web_dialogs:test_support",
-      ]
-
-      if (enable_extensions) {
-        deps += [ "//google_apis/drive:test_support" ]
-      }
+      ]      
     }
   }
 
@@ -6335,7 +6323,6 @@ if (!is_android) {
       "//crypto:test_support",
       "//device/fido:test_support",
       "//extensions/buildflags",
-      "//google_apis:test_support",
       "//mojo/core/embedder",
       "//net",
       "//net:net_resources",
@@ -7128,7 +7115,6 @@ if (!is_fuchsia && !is_android) {
       "//content/test:test_support",
       "//crypto:platform",
       "//crypto:test_support",
-      "//google_apis:test_support",
       "//net",
       "//net:net_resources",
       "//net:test_support",
@@ -7145,11 +7131,7 @@ if (!is_fuchsia && !is_android) {
       "//ui/base:test_support",
       "//ui/resources:ui_test_pak",
       "//ui/web_dialogs:test_support",
-    ]
-
-    if (enable_extensions) {
-      deps += [ "//google_apis/drive:test_support" ]
-    }
+    ]    
 
     if (is_win) {
       deps += [
