@@ -45,7 +45,8 @@ def rollup(input_path, output_path, filename, max_size, rollup_plugin):
         ['--format', 'iife', '-n', 'InspectorOverlay'] + ['--input', target] +
         ['--plugin', rollup_plugin],
         stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE)
+        stderr=subprocess.PIPE,
+        text=True)
     out, error = rollup_process.communicate()
     if not out:
         raise Exception("rollup failed: " + error)

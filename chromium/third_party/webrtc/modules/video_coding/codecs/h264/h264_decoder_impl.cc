@@ -203,7 +203,7 @@ int32_t H264DecoderImpl::InitDecode(const VideoCodec* codec_settings,
   // a pointer |this|.
   av_context_->opaque = this;
 
-  AVCodec* codec = avcodec_find_decoder(av_context_->codec_id);
+  const AVCodec* codec = avcodec_find_decoder(av_context_->codec_id);
   if (!codec) {
     // This is an indication that FFmpeg has not been initialized or it has not
     // been compiled/initialized with the correct set of codecs.

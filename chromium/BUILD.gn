@@ -98,7 +98,6 @@ group("gn_all") {
   if (!is_android && !is_chromecast) {
     deps += [
       "//crypto:crypto_unittests",
-      "//google_apis/gcm:gcm_unit_tests",
     ]
   }
 
@@ -235,11 +234,9 @@ group("gn_all") {
       "//chrome/test:unit_tests",
       "//components:components_browsertests",
       "//device:device_unittests",
-      "//google_apis/gcm:mcs_probe",
       "//media/capture:capture_unittests",
       "//media/cast:cast_unittests",
       "//third_party/angle/src/tests:angle_white_box_tests",
-      "//third_party/catapult/telemetry:bitmaptools($host_toolchain)",
     ]
   } else if (is_ios && !use_qt) {
     deps += [
@@ -354,7 +351,6 @@ group("gn_all") {
       "//net/android:net_junit_tests",
       "//services:services_junit_tests",
       "//testing/android/junit:junit_unit_tests",
-      "//third_party/catapult/devil",
       "//third_party/smhasher:murmurhash3",
       "//tools/android:android_tools",
       "//tools/android:memconsumer",
@@ -485,7 +481,6 @@ group("gn_all") {
   if (is_ios || is_win || (is_linux && !is_chromeos)) {
     deps += [
       "//base:base_i18n_perftests",
-      "//google_apis:google_apis_unittests",
     ]
   }
 
@@ -959,7 +954,6 @@ if (is_chromeos) {
       "//third_party/dawn/src/tests:dawn_unittests",
 
       # Blocked on https://github.com/catapult-project/catapult/issues/2297
-      #"//third_party/catapult/telemetry:bitmaptools",
       "//tools/perf/clear_system_cache",
       "//ui/ozone/gl:ozone_gl_unittests",
     ]
@@ -1037,7 +1031,6 @@ if (!is_ios && !use_qt) {
       data_deps = [
         "//chrome:chrome",
         "//chrome/test/chromedriver",
-        "//third_party/catapult/third_party/typ",
       ]
       if (is_win) {
         data_deps += [ "//build/win:copy_cdb_to_output" ]
@@ -1084,7 +1077,6 @@ if (!is_ios && !use_qt) {
       "//third_party/blink/public:blink_devtools_inspector_resources",
       "//third_party/blink/public/mojom:mojom_platform_js_data_deps",
       "//third_party/blink/renderer/core/html:js_files_for_form_controls_web_tests",
-      "//third_party/catapult/third_party/typ",
       "//third_party/mesa_headers",
       "//tools/imagediff",
     ]
@@ -1152,13 +1144,11 @@ if (!is_ios && !use_qt) {
 
     if (is_android) {
       data += [
-        "//third_party/catapult/",
         "//build/android/",
       ]
     }
   }
 
-  # https://chromium.googlesource.com/chromium/src/+/master/docs/testing/web_tests.md
   generate_wrapper("blink_web_tests") {
     testonly = true
     wrapper_script = "${root_build_dir}/bin/run_blink_web_tests"
@@ -1259,11 +1249,6 @@ if (!is_ios && !use_qt) {
       "//third_party/blink/web_tests/StaleTestExpectations",
       "//third_party/blink/web_tests/TestExpectations",
       "//third_party/blink/web_tests/VirtualTestSuites",
-      "//third_party/catapult/common/py_utils/",
-      "//third_party/catapult/devil/",
-      "//third_party/catapult/dependency_manager/",
-      "//third_party/catapult/third_party/zipfile/",
-      "//third_party/catapult/third_party/typ/",
       "//third_party/depot_tools/pylint",
       "//third_party/depot_tools/pylint-1.5",
       "//third_party/depot_tools/pylint_main.py",

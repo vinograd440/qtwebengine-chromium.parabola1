@@ -107,7 +107,6 @@ group("telemetry_chrome_test_without_chrome") {
     "//tools/perf/core/",  # chrome_telemetry_build/ depends on core/
   ]
   data_deps = [
-    "//third_party/catapult:telemetry_chrome_test_support",
     "//tools/metrics:metrics_python_tests",
   ]
 
@@ -151,7 +150,5 @@ group("telemetry_chrome_test_without_chrome") {
       "//build/android:devil_chromium_py",
       "//build/android:stack_tools",
     ]
-  } else if (!is_fuchsia) {
-    data_deps += [ "//third_party/catapult/telemetry:bitmaptools" ]
   }
 }

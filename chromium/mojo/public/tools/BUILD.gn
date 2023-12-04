@@ -14,5 +14,4 @@ group("mojo_python_unittests") {
     "//testing/xvfb.py",
   ]
   deps = [ "//mojo/public/tools/mojom/mojom:tests" ]
-  data_deps = [ "//third_party/catapult/third_party/typ/" ]
 }
